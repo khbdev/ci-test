@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func helloHandler(w http.ResponseWriter, r *http.Request) {
+func HelloHandler(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method != http.MethodGet {
 		http.Error(w, "Faqat GET method ishlaydi!", http.StatusMethodNotAllowed)
@@ -17,7 +17,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", helloHandler)
+	http.HandleFunc("/", HelloHandler)
 
 	fmt.Println("Server 8085-portda ishlamoqda...")
 	err := http.ListenAndServe(":8085", nil)
